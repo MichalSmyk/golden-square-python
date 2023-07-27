@@ -35,3 +35,11 @@ def test_wrapping_alredy_wrapped():
         present.wrap(2)
     message = str(e.value)
     assert message == "A contents has already been wrapped."
+
+#if we try to wrap an already wrapped present first wrappec valu is unchanged
+def test_wrapping_alredy_wrapped_preserves_value():
+    present = Present()
+    present.wrap(1)
+    with pytest.raises(Exception) as e:
+        present.wrap(2)
+    assert present.unwrap() == 1
