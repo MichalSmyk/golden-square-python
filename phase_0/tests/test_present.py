@@ -17,3 +17,13 @@ def test_unwrap_without_wrapping():
         present.unwrap()
     message = str(e.value)
     assert message == "No contents have been wrapped."
+
+# if wrapped same thing twice get error message 
+def test_wrap_twice():
+    present = Present()
+    with pytest.raises(Exception) as e:
+        present.wrap(1)
+        present.wrap(1)
+    message = str(e.value)
+    assert message == "A contents has already been wrapped."
+    
