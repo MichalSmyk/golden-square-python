@@ -27,3 +27,11 @@ def test_wrap_twice():
     message = str(e.value)
     assert message == "A contents has already been wrapped."
     
+#get error if wrapping alredy wrapped 
+def test_wrapping_alredy_wrapped():
+    present = Present()
+    present.wrap(1)
+    with pytest.raises(Exception) as e:
+        present.wrap(1)
+    message = str(e.value)
+    assert message == "A contents has already been wrapped."
