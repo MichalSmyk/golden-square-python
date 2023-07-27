@@ -7,3 +7,7 @@ def test_with_correct_codeword():
 def test_with_incorrect_codeword():
     result = check_codeword("water")
     assert result == "WRONG!"
+
+def test_with_close_codeword():
+    result = check_codeword("house")
+    assert result == "Close, but nope."
