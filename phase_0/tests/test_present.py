@@ -32,6 +32,6 @@ def test_wrapping_alredy_wrapped():
     present = Present()
     present.wrap(1)
     with pytest.raises(Exception) as e:
-        present.wrap(1)
+        present.wrap(2)
     message = str(e.value)
     assert message == "A contents has already been wrapped."
