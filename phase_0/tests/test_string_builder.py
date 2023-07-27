@@ -8,3 +8,9 @@ def test_string_builder_init_with_empty_string():
 def test_length_of_empty_string_is_zero():
     builder = StringBuilder()
     assert builder.size() == 0
+#adds string
+def test_adds_to_the_string():
+    builder = StringBuilder()
+    builder.add(" Mike")
+    assert builder.size() == 5
+    assert builder.output() == " Mike"
