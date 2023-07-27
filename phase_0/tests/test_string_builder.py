@@ -14,3 +14,10 @@ def test_adds_to_the_string():
     builder.add(" Mike")
     assert builder.size() == 5
     assert builder.output() == " Mike"
+#adds strings 
+def test_adds_two_strings():
+    builder = StringBuilder()
+    builder.add("Soft")
+    builder.add("ware")
+    assert builder.size() == 8
+    assert builder.output() == "Software"
