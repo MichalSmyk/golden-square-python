@@ -18,7 +18,7 @@ def test_unwrap_without_wrapping():
     message = str(e.value)
     assert message == "No contents have been wrapped."
 
-# if wrapped same thing twice get error message 
+# if wrapped twice get error message 
 def test_wrap_twice():
     present = Present()
     with pytest.raises(Exception) as e:
