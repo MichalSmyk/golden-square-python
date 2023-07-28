@@ -1,2 +1,5 @@
 def grammar_check(text):
-    return text[-1] in ".?!"
+    if text[0].isupper():
+        return text[-1] in ".?!"
+    else:
+        return False
