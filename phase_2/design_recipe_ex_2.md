@@ -52,21 +52,21 @@ grammar_check("Hello, this is correct sentence!")
 Given a sentence with capital letter but not fill stop or other mark
 Returns false 
 """
-grammar_check("Hello, this is correct sentence")
+grammar_check("Hello, this is incorrect sentence")
 # => False
 
 """
 Given with no capital letter and a full stop
 Returns false
 """
-grammar_check("hello, this is correct sentence")
+grammar_check("hello, this is incorrect sentence")
 # => False
 
 """
 Given a sentence with capittal letter but ends with a coma 
 Returns false 
 """
-grammar_check("Hello, this is correct sentence,")
+grammar_check("Hello, this is incorrect sentence,")
 # => False
 
 """

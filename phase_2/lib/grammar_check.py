@@ -1,2 +1,2 @@
 def grammar_check(text):
-    return True
+    return text[-1] == "."
