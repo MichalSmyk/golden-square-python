@@ -1,10 +1,10 @@
-# {{PROBLEM}} Function Design Recipe
-
-Copy this into a `recipe.md` in your project and fill it out.
+# Grammar check Function Design Recipe
 
 ## 1. Describe the Problem
 
-_Put or write the user story here. Add any clarifying notes you might have._
+As a user
+So that I can improve my grammar
+I want to verify that a text starts with a capital letter and ends with a suitable sentence-ending punctuation mark.
 
 ## 2. Design the Function Signature
 
@@ -13,17 +13,12 @@ _Include the name of the function, its parameters, return value, and side effect
 ```python
 # EXAMPLE
 
-def extract_uppercase(mixed_words):
-    """Extracts uppercase words from a string
-
-    Parameters: (list all parameters and their types)
-        mixed_words: a string containing words (e.g. "hello WORLD")
-
-    Returns: (state the return value and its type)
-        a list of strings, each one a word (e.g. ["WORLD"])
-
-    Side effects: (state any side effects)
-        This function doesn't print anything or have any other side-effects
+def grammar_check(text):
+    """
+    Parameters: 
+        text: a string representing a human-readable text
+    Returns:
+        boolean, true if valid, false otherwise
     """
     pass # Test-driving means _not_ writing any code here yet.
 ```
@@ -36,46 +31,50 @@ _Make a list of examples of what the function will take and return._
 # EXAMPLE
 
 """
-Given a lower and an uppercase word
-It returns a list with the uppercase word
+Given a valid sentence with a capital letter and a full stop
+Returns true
 """
-extract_uppercase("hello WORLD") => ["WORLD"]
+grammar_check("Hello, this is correct sentence.")
+# => True
+"""
+Given a valid sentence with a capital letter and a question mark
+Returns true
+"""
+grammar_check("Hello, this is correct sentence?")
+# => True
+"""
+Given a valid sentence with a capital letter and a exclamation mark
+Returns true
+"""
+grammar_check("Hello, this is correct sentence!")
+# => True
+"""
+Given a sentence with capital letter but not fill stop or other mark
+Returns false 
+"""
+grammar_check("Hello, this is correct sentence")
+# => False
 
 """
-Given two uppercase words
-It returns a list with both words
+Given with no capital letter and a full stop
+Returns false
 """
-extract_uppercase("HELLO WORLD") => ["HELLO", "WORLD"]
+grammar_check("hello, this is correct sentence")
+# => False
 
 """
-Given two lowercase words
-It returns an empty list
+Given a sentence with capittal letter but ends with a coma 
+Returns false 
 """
-extract_uppercase("hello world") => []
+grammar_check("Hello, this is correct sentence,")
+# => False
 
 """
-Given a lower and a mixed case word
-It returns an empty list
+Given no sentence 
+Raises an error 
 """
-extract_uppercase("hello WoRLD") => []
-
-"""
-Given a lowercase word and an uppercase word with an exclamation mark
-It returns a list with the uppercase word, no exclamation mark
-"""
-extract_uppercase("hello WORLD!") => ["WORLD"]
-
-"""
-Given an empty string
-It returns an empty list
-"""
-extract_uppercase("") => []
-
-"""
-Given a None value
-It throws an error
-"""
-extract_uppercase(None) throws an error
+grammar_check("")
+# Raises "Cannot check grammar of empty string"
 ```
 
 _Encode each example as a test. You can add to the above list as you go._
