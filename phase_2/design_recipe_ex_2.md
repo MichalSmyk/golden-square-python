@@ -59,7 +59,7 @@ grammar_check("Hello, this is incorrect sentence")
 Given with no capital letter and a full stop
 Returns false
 """
-grammar_check("hello, this is incorrect sentence")
+grammar_check("hello, this is incorrect sentence.")
 # => False
 
 """

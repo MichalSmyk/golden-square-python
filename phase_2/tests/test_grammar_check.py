@@ -39,3 +39,11 @@ Returns false
 def test_with_capital_letter_but_ending_with_comma():
     result = grammar_check("Hello, this is incorrect sentence,")
     assert result == False
+
+"""
+Given with no capital letter and a full stop
+Returns false
+"""
+def test_with_lower_letter_and_stop():
+    result = grammar_check("hello, this is incorrect sentence.")
+    assert result == False
