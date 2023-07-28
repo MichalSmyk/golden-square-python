@@ -17,3 +17,10 @@ first 5 words and ...
 def test_if_more_than_5_words_returns_5_and_dots():
     result = make_snippet("Hello how are you feeling today")
     assert result == "Hello how are you feeling..."
+
+"""
+5 words given 
+"""
+def test_only_5_words_given():
+    result = make_snippet("Hello how are you today")
+    assert result == "Hello how are you today"
