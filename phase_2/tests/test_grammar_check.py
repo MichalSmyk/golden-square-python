@@ -15,3 +15,11 @@ Returns false
 def test_with_capital_letter_but_no_end_mark():
     result = grammar_check("Hello, this is incorrect sentence")
     assert result == False
+
+"""
+Given a valid sentence with a capital letter and a question mark
+Returns true
+"""
+def test_with_capital_letter_and_question_mark():
+    result = grammar_check("Hello, this is correct sentence?")
+    assert result == True
