@@ -1,2 +1,6 @@
 def count_words(str):
-    return str
+    if not str.strip():
+        return 0
+    
+    words_number = str.split(" ")
+    return len(words_number)
