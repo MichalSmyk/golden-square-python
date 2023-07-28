@@ -1,26 +1,28 @@
-# {{PROBLEM}} Function Design Recipe
+# Reading time Function Design Recipe
 
-Copy this into a `recipe.md` in your project and fill it out.
 
 ## 1. Describe the Problem
 
-_Put or write the user story here. Add any clarifying notes you might have._
+As a user
+So that I can manage my time
+I want to see an estimate of reading time for a text, assuming that I can read 200 words a minute.
 
 ## 2. Design the Function Signature
 
 _Include the name of the function, its parameters, return value, and side effects._
 
 ```python
-# EXAMPLE
 
-def extract_uppercase(mixed_words):
-    """Extracts uppercase words from a string
+
+def reading_time(text):
+    """Given a text user wants to know how long it will take to read.
+        200 word per minute
 
     Parameters: (list all parameters and their types)
-        mixed_words: a string containing words (e.g. "hello WORLD")
+        text: a string containing words 
 
     Returns: (state the return value and its type)
-        a list of strings, each one a word (e.g. ["WORLD"])
+        returns time in minutes
 
     Side effects: (state any side effects)
         This function doesn't print anything or have any other side-effects
@@ -36,40 +38,28 @@ _Make a list of examples of what the function will take and return._
 # EXAMPLE
 
 """
-Given a lower and an uppercase word
-It returns a list with the uppercase word
+Given no text
+It returns 0
 """
-extract_uppercase("hello WORLD") => ["WORLD"]
+reading_time("") => 0
 
 """
-Given two uppercase words
-It returns a list with both words
+Given 100 words
+It returns 0.5
 """
-extract_uppercase("HELLO WORLD") => ["HELLO", "WORLD"]
+reading_time("assume 100 words here") => 0.5
 
 """
-Given two lowercase words
-It returns an empty list
+Given 200 words 
+It returns 1
 """
-extract_uppercase("hello world") => []
+reading_time("assume 200 words here") => 1
 
 """
-Given a lower and a mixed case word
-It returns an empty list
+Given 300 words 
+It returns 1.5
 """
-extract_uppercase("hello WoRLD") => []
-
-"""
-Given a lowercase word and an uppercase word with an exclamation mark
-It returns a list with the uppercase word, no exclamation mark
-"""
-extract_uppercase("hello WORLD!") => ["WORLD"]
-
-"""
-Given an empty string
-It returns an empty list
-"""
-extract_uppercase("") => []
+reading_time("assume 300 words here") => 1.5
 
 """
 Given a None value
@@ -89,15 +79,15 @@ Here's an example for you to start with:
 ```python
 # EXAMPLE
 
-from lib.extract_uppercase import *
+from lib.reading_time import *
 
 """
-Given a lower and an uppercase word
-It returns a list with the uppercase word
+Given a text 
+It returns how long it takes to read it when 200 words takes one minute
 """
-def test_extract_uppercase_with_upper_then_lower():
-    result = extract_uppercase("hello WORLD")
-    assert result == ["WORLD"]
+def test_given_zero_words():
+    result = reading_time("")
+    assert result == 0
 
 ```
 
