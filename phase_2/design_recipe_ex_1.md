@@ -61,11 +61,7 @@ It returns 1.5
 """
 reading_time("assume 300 words here") => 1.5
 
-"""
-Given a None value
-It throws an error
-"""
-extract_uppercase(None) throws an error
+
 ```
 
 _Encode each example as a test. You can add to the above list as you go._
