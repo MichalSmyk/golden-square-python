@@ -31,3 +31,11 @@ Returns true
 def test_with_capital_letter_and_exclamation_mark():
     result = grammar_check("Hello, this is correct sentence!")
     assert result == True
+
+"""
+Given a sentence with capittal letter but ends with a coma 
+Returns false 
+"""
+def test_with_capital_letter_but_ending_with_comma():
+    result = grammar_check("Hello, this is incorrect sentence,")
+    assert result == False
