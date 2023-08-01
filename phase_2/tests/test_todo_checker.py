@@ -15,3 +15,11 @@ It returns true
 def test_text_contains_uppercase_todo():
     result = todo_checker("This string contains #TODO")
     assert result == True
+
+"""
+Given a text with lowercase word
+It returns true
+"""
+def test_text_contains_lowercase_todo():
+    result = todo_checker("This string contains #todo")
+    assert result == True

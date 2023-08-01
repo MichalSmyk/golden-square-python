@@ -38,9 +38,9 @@ _Make a list of examples of what the function will take and return._
 
 """
 Given a text 
-It returns true
+It returns false
 """
-todo_checker("This string is a text") => True
+todo_checker("This string is a text") => False
 """
 Given a text with uppercase word
 It returns true
