@@ -4,7 +4,9 @@ def encode(text, key):
     ciphertext_chars = []
     for i in text:
         ciphered_char = chr(65 + cipher.index(i))
+        # print("1", ciphered_char)
         ciphertext_chars.append(ciphered_char)
+        # print("2", ciphertext_chars)
 
     return "".join(ciphertext_chars)
 
@@ -14,14 +16,14 @@ def decode(encrypted, key):
 
     plaintext_chars = []
     for i in encrypted:
-        plain_char = cipher[65 - ord(i)]
+        plain_char = cipher[ord(i) - 65]
         plaintext_chars.append(plain_char)
 
     return "".join(plaintext_chars)
 
 
 def make_cipher(key):
-    alphabet = [chr(i + 98) for i in range(1, 26)]
+    alphabet = [chr(i + 97) for i in range(26)]
     cipher_with_duplicates = list(key) + alphabet
 
     cipher = []
