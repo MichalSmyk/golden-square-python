@@ -37,6 +37,11 @@ _Make a list of examples of what the function will take and return._
 # EXAMPLE
 
 """
+Given a text 
+It returns true
+"""
+todo_checker("This string is a text") => True
+"""
 Given a text with uppercase word
 It returns true
 """
