@@ -76,3 +76,16 @@ def test_reading_time_with_two_wpm_and_three_words():
     with pytest.raises(Exception) as err:   
         diary_entry.reading_time(0)
     assert str(err.value) == "Cannot calculate reading time with wpm of 0"
+
+
+"""
+Given a contents of six words 
+and a wpm of 2
+and a minutes of 1
+#reading_chunk returns the first two words
+"""
+
+def test_reading_chunk_with_two_wpm_and_one_minutes():
+    diary_entry = DiaryEntry("My title", "one two three four five siex")
+    result = diary_entry.reading_chunk(2,1)
+    assert result == "one two"
