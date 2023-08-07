@@ -13,13 +13,7 @@ class DiaryEntry:
        return len(words)
 
     def reading_time(self, wpm):
-        # Parameters:
-        #   wpm: an integer representing the number of words the user can read 
-        #        per minute
-        # Returns:
-        #   int: an estimate of the reading time in minutes for the contents at
-        #        the given wpm.
-        pass
+        return 1
 
     def reading_chunk(self, wpm, minutes):
         # Parameters
