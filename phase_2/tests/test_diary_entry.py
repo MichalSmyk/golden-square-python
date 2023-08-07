@@ -11,4 +11,12 @@ def test_formats_with_title_and_contents():
     result = diary_entry.format()
     assert result == "My title: Some contents"
 
-    
+
+"""
+Given a title and contents 
+#count_words returns the number of words in title and contents 
+"""
+def test_counts_words_in_both_title_and_contents():
+    diary_entry = DiaryEntry("My title", "Some contents")
+    result = diary_entry.count_words()
+    assert result == 4
