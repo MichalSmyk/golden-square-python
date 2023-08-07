@@ -1,5 +1,7 @@
 class DiaryEntry:
     def __init__(self, title, contents):
+        if title == "" or contents == "":
+            raise Exception("Diary entries must have a title or content")
         self._title = title
         self._contents = contents
 
