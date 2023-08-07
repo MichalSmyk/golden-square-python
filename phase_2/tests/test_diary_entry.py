@@ -42,3 +42,14 @@ def test_reading_time_with_two_wpm_and_two_words():
     diary_entry = DiaryEntry("My title", "Some contents")
     result = diary_entry.reading_time(2)
     assert result == 1
+
+"""
+Given a wpm of 2
+and a text with 4 words
+#reading_time returns 2 minutes
+"""
+
+def test_reading_time_with_two_wpm_and_two_words():
+    diary_entry = DiaryEntry("My title", "Some contents")
+    result = diary_entry.reading_time(4)
+    assert result == 2
