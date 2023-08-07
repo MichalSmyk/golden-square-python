@@ -13,7 +13,8 @@ class DiaryEntry:
        return len(words)
 
     def reading_time(self, wpm):
-        return 1
+        contents_words_count = len(self._contents.split())
+        return contents_words_count / wpm
 
     def reading_chunk(self, wpm, minutes):
         # Parameters
