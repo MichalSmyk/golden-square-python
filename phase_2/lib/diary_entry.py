@@ -1,3 +1,5 @@
+import math
+
 class DiaryEntry:
     def __init__(self, title, contents):
         if title == "" or contents == "":
@@ -14,7 +16,7 @@ class DiaryEntry:
 
     def reading_time(self, wpm):
         contents_words_count = len(self._contents.split())
-        return contents_words_count / wpm
+        return math.ceil(contents_words_count / wpm)
 
     def reading_chunk(self, wpm, minutes):
         # Parameters

@@ -60,3 +60,7 @@ and a text with 3 words
 #reading_time returns 2 minutes
 """
 
+def test_reading_time_with_two_wpm_and_three_words():
+    diary_entry = DiaryEntry("My title", "one two three")
+    result = diary_entry.reading_time(2)
+    assert result == 2
