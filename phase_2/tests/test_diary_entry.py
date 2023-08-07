@@ -89,3 +89,15 @@ def test_reading_chunk_with_two_wpm_and_one_minutes():
     diary_entry = DiaryEntry("My title", "one two three four five siex")
     result = diary_entry.reading_chunk(2,1)
     assert result == "one two"
+
+"""
+Given a contents of six words 
+and a wpm of 2
+and a minutes of 2
+#reading_chunk returns the first four words
+"""
+
+def test_reading_chunk_with_two_wpm_and_one_minutes():
+    diary_entry = DiaryEntry("My title", "one two three four five siex")
+    result = diary_entry.reading_chunk(2,2)
+    assert result == "one two three four"
