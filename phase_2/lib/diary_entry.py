@@ -1,15 +1,10 @@
 class DiaryEntry:
     def __init__(self, title, contents):
-        # Parameters:
-        #   title: string
-        #   contents: string
-        pass
+        self._title = title
+        self._contents = contents
 
     def format(self):
-        # Returns:
-        #   A formatted diary entry, for example:
-        #   "My Title: These are the contents"
-        pass
+      return f"{self._title}: {self._contents}"
 
     def count_words(self):
         # Returns:
