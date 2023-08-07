@@ -6,13 +6,14 @@ class DiaryEntry:
             raise Exception("Diary entries must have a title or content")
         self._title = title
         self._contents = contents
+        self._read_so_far = 0
 
     def format(self):
-      return f"{self._title}: {self._contents}"
+        return f"{self._title}: {self._contents}"
 
     def count_words(self):
-       words = self.format().split()
-       return len(words)
+        words = self.format().split()
+        return len(words)
 
     def reading_time(self, wpm):
         if wpm == 0:
@@ -34,6 +35,10 @@ class DiaryEntry:
         # skipping what has already been read, until the contents is fully read.
         # The next call after that should restart from the beginning.
         words_user_can_read = wpm * minutes
+        self._read_so_far = words_user_can_read
         words = self._contents.split()
-        chunk_words = words[:words_user_can_read]
+        chunk_start = self._read_so_far
+        chunk_end = self._read_so_far + words_user_can_read
+        chunk_words = words[chunk_start:chunk_end]
+        self._read_so_far = chunk_end
         return " ".join(chunk_words)

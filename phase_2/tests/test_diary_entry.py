@@ -86,8 +86,8 @@ and a minutes of 1
 """
 
 def test_reading_chunk_with_two_wpm_and_one_minutes():
-    diary_entry = DiaryEntry("My title", "one two three four five siex")
-    result = diary_entry.reading_chunk(2,1)
+    diary_entry = DiaryEntry("My title", "one two three four five six")
+    result = diary_entry.reading_chunk(2, 1)
     assert result == "one two"
 
 """
@@ -98,6 +98,19 @@ and a minutes of 2
 """
 
 def test_reading_chunk_with_two_wpm_and_two_minutes():
-    diary_entry = DiaryEntry("My title", "one two three four five siex")
-    result = diary_entry.reading_chunk(2,2)
+    diary_entry = DiaryEntry("My title", "one two three four five six")
+    result = diary_entry.reading_chunk(2, 2)
     assert result == "one two three four"
+
+
+"""
+given a contents of six words 
+and a wpm of 2 and 1 minute 
+#reading_chunk first returns "one two" next time "three four"
+"""
+
+def test_reading_chunk_with_two_wpm_and_one_minite_called_twice():
+    diary_entry = DiaryEntry("My title", "one two three four five six")
+    assert diary_entry.reading_chunk(2, 1) == "one two"
+    assert diary_entry.reading_chunk(2, 1) == "three four"
+    
