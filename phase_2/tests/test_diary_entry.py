@@ -64,3 +64,15 @@ def test_reading_time_with_two_wpm_and_three_words():
     diary_entry = DiaryEntry("My title", "one two three")
     result = diary_entry.reading_time(2)
     assert result == 2
+
+"""
+Given a wpm of 0
+
+#reading_time raises an error
+"""
+
+def test_reading_time_with_two_wpm_and_three_words():
+    diary_entry = DiaryEntry("My title", "one two three")
+    with pytest.raises(Exception) as err:   
+        diary_entry.reading_time(0)
+    assert str(err.value) == "Cannot calculate reading time with wpm of 0"

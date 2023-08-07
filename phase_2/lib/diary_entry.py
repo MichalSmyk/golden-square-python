@@ -15,6 +15,8 @@ class DiaryEntry:
        return len(words)
 
     def reading_time(self, wpm):
+        if wpm == 0:
+            raise Exception("Cannot calculate reading time with wpm of 0")
         contents_words_count = len(self._contents.split())
         return math.ceil(contents_words_count / wpm)
 
