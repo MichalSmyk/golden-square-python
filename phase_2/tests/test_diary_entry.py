@@ -49,7 +49,7 @@ and a text with 4 words
 #reading_time returns 2 minutes
 """
 
-def test_reading_time_with_two_wpm_and_two_words():
-    diary_entry = DiaryEntry("My title", "Some contents")
+def test_reading_time_with_two_wpm_and_four_words():
+    diary_entry = DiaryEntry("My title", "one two three four")
     result = diary_entry.reading_time(4)
     assert result == 2
