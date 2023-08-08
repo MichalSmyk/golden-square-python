@@ -26,3 +26,13 @@ def test_with_capital_letter_and_question_mark():
     grammar_stats = GrammarStats()
     result = grammar_stats.check("Hello, this is correct sentence?")
     assert result == True
+
+
+"""
+Given a valid sentence with a capital letter and a exclamation mark
+Returns true
+"""
+def test_with_capital_letter_and_exclamation_mark():
+    grammar_stats = GrammarStats()
+    result = grammar_stats.check("Hello, this is correct sentence!")
+    assert result == True
