@@ -8,7 +8,7 @@ class GrammarStats:
         # Returns:
         #   bool: true if the text begins with a capital letter and ends with a
         #         sentence-ending punctuation mark, false otherwise
-        pass
+        return text[0].isupper() and text[-1] in ".?!"
   
     def percentage_good(self):
         # Returns:
