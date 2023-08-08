@@ -36,3 +36,12 @@ def test_with_capital_letter_and_exclamation_mark():
     grammar_stats = GrammarStats()
     result = grammar_stats.check("Hello, this is correct sentence!")
     assert result == True
+
+"""
+Given a sentence with capittal letter but ends with a coma 
+Returns false 
+"""
+def test_with_capital_letter_but_ending_with_comma():
+    grammar_stats = GrammarStats()
+    result = grammar_stats.check("Hello, this is incorrect sentence,")
+    assert result == False
