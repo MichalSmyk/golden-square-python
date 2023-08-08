@@ -45,3 +45,13 @@ def test_with_capital_letter_but_ending_with_comma():
     grammar_stats = GrammarStats()
     result = grammar_stats.check("Hello, this is incorrect sentence,")
     assert result == False
+
+
+"""
+Given with no capital letter and a full stop
+Returns false
+"""
+def test_with_lower_letter_and_stop():
+    grammar_stats = GrammarStats()
+    result = grammar_stats.check("hello, this is incorrect sentence.")
+    assert result == False
