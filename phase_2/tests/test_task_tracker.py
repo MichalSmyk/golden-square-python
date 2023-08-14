@@ -52,11 +52,14 @@ def test_mark_task_tat_is_too_low_complete():
     assert str(err.value) == "No such task to mark complete"
     assert tracker.list_incomplete() == ["Walk a dog"]
 
-# """
-# If we try to mark a task tomplete that does not exist 
-# it rises an error 
-# """
-# tracekr = TaskTracker()
-# tracker.add("Walk a dog")
-# tracker.mark_complete(2) # Raises an error "No such task to mark complete"
-# tracker.list_incomplete() #=> ["Walk the dog"]
+"""
+If we try to mark a task tomplete that does not exist 
+it rises an error 
+"""
+def test_mark_task_tat_is_too_high_complete():
+    tracker = TaskTracker()
+    tracker.add("Walk a dog")
+    with pytest.raises(Exception) as err:
+        tracker.mark_complete(1) # Raises an error "No such task to mark complete"
+    assert str(err.value) == "No such task to mark complete"
+    assert tracker.list_incomplete() == ["Walk a dog"]
