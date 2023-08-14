@@ -5,8 +5,7 @@ class TaskTracker():
         pass
 
     def list_incomplete(self):
-        #Returns:
-        #   A list of incomplete tasks
+       return []
 
     def mark_complete(self, index):
         #Parameters:

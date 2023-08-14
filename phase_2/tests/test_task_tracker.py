@@ -1,19 +1,20 @@
 from lib.task_tracker import TaskTracker
 
-# """
-# Initially, there are no tasks
-# """
-# tracker = TaskTracker()
-# tracker.list_incomplete() #=> []
+"""
+Initially, there are no tasks
+"""
+def test_initially_has_no_tasks():
+    tracker = TaskTracker()
+    assert tracker.list_incomplete() == []
 
-# """
-# When we add a task
-# It is reflected in the lost of tasks
-# """
-
-# tracekr = TaskTracker()
-# tracker.add("Walk a dog")
-# tracker.list_incomplete() #=> ["Walk the dog"]
+"""
+When we add a task
+It is reflected in the lost of tasks
+"""
+def test_add_task_reflected_in_tasks():
+    tracker = TaskTracker()
+    tracker.add("Walk a dog")
+    assert tracker.list_incomplete() == ["Walk the dog"]
 
 # """
 # When we add multiple tasks
