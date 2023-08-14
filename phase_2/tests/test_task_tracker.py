@@ -27,17 +27,18 @@ def test_add_multiple_tasks():
     tracker.add("Walk a frog")
     assert tracker.list_incomplete() == ["Walk a dog", "Walk a cat", "Walk a frog"]
 
-# """
-# When we add multiple tasks
-# And mark one as complete 
-# It disappears from the task list
-# """
-# tracekr = TaskTracker()
-# tracker.add("Walk a dog")
-# tracker.add("Walk a cat")
-# tracker.add("Walk a frog")
-# tracker.makr_complete(1)
-# tracker.list_incomplete() #=> ["Walk the dog", "Walk a frog"]
+"""
+When we add multiple tasks
+And mark one as complete 
+It disappears from the task list
+"""
+def test_marks_tasks_complete():
+    tracker = TaskTracker()
+    tracker.add("Walk a dog")
+    tracker.add("Walk a cat")
+    tracker.add("Walk a frog")
+    tracker.mark_complete(1)
+    assert tracker.list_incomplete() == ["Walk a dog", "Walk a frog"]
 
 # """
 # If we try to mark a task tomplete that does not exist 
