@@ -58,3 +58,12 @@ def test_with_lower_letter_and_stop():
     assert result == False
 
 
+"""
+Given 2 sentences, one good and one wrong
+Returns a number 50
+"""
+def test_given_one_good_and_one_bad_text_returns_fifty():
+    grammar_stats = GrammarStats()
+    result = grammar_stats.check("Hello, this is correct sentence.")
+    result = grammar_stats.check("hello, this is not correct sentence.")
+    assert grammar_stats.percentage_good() == 50
