@@ -1,3 +1,5 @@
+import math
+
 class GrammarStats:
     def __init__(self):
         self._text_checked = 0
@@ -26,4 +28,4 @@ class GrammarStats:
         self._text_checked = self._text_passed + self._text_failed
         integer_as_procentage = (self._text_passed / self._text_checked) * 100
 
-        return integer_as_procentage
+        return math.floor(integer_as_procentage)
