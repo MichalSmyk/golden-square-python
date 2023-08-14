@@ -16,15 +16,16 @@ def test_add_task_reflected_in_tasks():
     tracker.add("Walk the dog")
     assert tracker.list_incomplete() == ["Walk the dog"]
 
-# """
-# When we add multiple tasks
-# They are all reflected in the list of tasks 
-# """
-# tracekr = TaskTracker()
-# tracker.add("Walk a dog")
-# tracker.add("Walk a cat")
-# tracker.add("Walk a frog")
-# tracker.list_incomplete() #=> ["Walk the dog", "Walk a cat", "Walk a frog"]
+"""
+When we add multiple tasks
+They are all reflected in the list of tasks 
+"""
+def test_add_multiple_tasks():
+    tracker = TaskTracker()
+    tracker.add("Walk a dog")
+    tracker.add("Walk a cat")
+    tracker.add("Walk a frog")
+    assert tracker.list_incomplete() == ["Walk a dog", "Walk a cat", "Walk a frog"]
 
 # """
 # When we add multiple tasks
