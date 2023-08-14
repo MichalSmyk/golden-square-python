@@ -1,5 +1,6 @@
 from lib.grammar_stats import GrammarStats
 
+
 """
 Given a valid sentence with a capital letter and a full stop
 Returns true
