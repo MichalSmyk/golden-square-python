@@ -1,11 +1,13 @@
 class TaskTracker():
+    def __init__(self):
+        self._tasks = []
+         
+
     def add(self, task):
-        #Parameters:
-        #   task: string, representing a class
-        pass
+       self._tasks.append(task)
 
     def list_incomplete(self):
-       return []
+       return self._tasks
 
     def mark_complete(self, index):
         #Parameters:

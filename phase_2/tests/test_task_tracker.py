@@ -13,7 +13,7 @@ It is reflected in the lost of tasks
 """
 def test_add_task_reflected_in_tasks():
     tracker = TaskTracker()
-    tracker.add("Walk a dog")
+    tracker.add("Walk the dog")
     assert tracker.list_incomplete() == ["Walk the dog"]
 
 # """
