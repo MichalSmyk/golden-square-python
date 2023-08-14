@@ -10,4 +10,6 @@ class TaskTracker():
        return self._tasks
 
     def mark_complete(self, index):
+        if index < 0:
+            raise Exception("No such task to mark complete")
         del self._tasks[index]
