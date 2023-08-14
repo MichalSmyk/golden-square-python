@@ -67,3 +67,12 @@ def test_given_one_good_and_one_bad_text_returns_fifty():
     result = grammar_stats.check("Hello, this is correct sentence.")
     result = grammar_stats.check("hello, this is not correct sentence.")
     assert grammar_stats.percentage_good() == 50
+
+"""
+Gien 1 good sentence 
+Returns 100
+"""
+def test_one_good_sentence_results_in_one_hundred():
+    grammar_stats = GrammarStats()
+    result = grammar_stats.check("Hello, this is correct sentence.")
+    assert grammar_stats.percentage_good() == 100
