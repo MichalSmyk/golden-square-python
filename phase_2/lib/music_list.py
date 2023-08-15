@@ -8,4 +8,6 @@ class MusicList:
             self._tracks.append(track)
 
     def list_of_tracks(self):
-       return self._tracks
+        if len(self._tracks) == 0:
+            raise Exception("You have no tracks added!") 
+        return self._tracks

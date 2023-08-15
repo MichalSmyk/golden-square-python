@@ -1,4 +1,5 @@
 from lib.music_list import MusicList
+import pytest
 
 """
 Given a track
@@ -30,3 +31,14 @@ def test_add_track_does_not_dulpicate_tracks():
     music_list.add_track("Artist two - track two")
     music_list.add_track("Artist two - track two")
     assert music_list.list_of_tracks() == ["Artist one - track one", "Artist two - track two"]
+
+"""
+Without any added tracks 
+#list_of_tracks throws an error 
+"""
+def test_throws_error_if_no_track_in_the_list():
+    music_list = MusicList()
+    with pytest.raises(Exception) as err:
+        music_list.list_of_tracks()
+    assert str(err.value) == "You have no tracks added!"
+    

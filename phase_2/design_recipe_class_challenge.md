@@ -75,7 +75,7 @@ Without any added tracks
 #list_of_tracks throws an error 
 """
 music_list = MusicList()
-music_listt.list_of_tracks() # => "You have no tracks added!"
+music_list.list_of_tracks() # => "You have no tracks added!"
 ```
 
 _Encode each example as a test. You can add to the above list as you go._
