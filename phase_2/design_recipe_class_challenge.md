@@ -49,7 +49,7 @@ Given a track
 """
 music_list = MusicList()
 music_list.add_track("Artist one - track one")
-musiclist.list_of_tracks() # => "Artist one - track one"
+music_list.list_of_tracks() # => "Artist one - track one"
 
 """
 Given two tracks 
@@ -58,7 +58,7 @@ Given two tracks
 music_list = MusicList()
 music_list.add_track("Artist one - track one")
 music_list.add_track("Artist two - track two")
-musiclist.list_of_tracks() # => "Artist one - track one, Artist two - track two"
+music_list.list_of_tracks() # => "Artist one - track one, Artist two - track two"
 
 """
 Given a track that is alredy in the list 
@@ -68,14 +68,14 @@ music_list = MusicList()
 music_list.add_track("Artist one - track one")
 music_list.add_track("Artist two - track two")
 music_list.add_track("Artist two - track two")
-musiclist.list_of_tracks() # => "Artist one - track one, Artist two - track two"
+music_list.list_of_tracks() # => "Artist one - track one, Artist two - track two"
 
 """
 Without any added tracks 
 #list_of_tracks throws an error 
 """
 music_list = MusicList()
-musiclist.list_of_tracks() # => "You have no tracks added!"
+music_listt.list_of_tracks() # => "You have no tracks added!"
 ```
 
 _Encode each example as a test. You can add to the above list as you go._
