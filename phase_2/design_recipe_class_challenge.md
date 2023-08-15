@@ -19,7 +19,7 @@ _Include the initializer, public properties, and public methods with all paramet
 
 class MusicList:
  
-    def add_track(track):
+    def add_track(self, track):
         # Parameters:
         #   track: string representing a single track
         # Returns:
@@ -44,27 +44,38 @@ _Make a list of examples of how the class will behave in different situations._
 # EXAMPLE
 
 """
-Given a name and a task
-#remind reminds the user to do the task
+Given a track
+#add_track adds it to the list
 """
-reminder = Reminder("Kay")
-reminder.remind_me_to("Walk the dog")
-reminder.remind() # => "Walk the dog, Kay!"
+music_list = MusicList()
+music_list.add_track("Artist one - track one")
+musiclist.list_of_tracks() # => "Artist one - track one"
 
 """
-Given a name and no task
-#remind raises an exception
+Given two tracks 
+#add_track adds it to the list
 """
-reminder = Reminder("Kay")
-reminder.remind() # raises an error with the message "No task set."
+music_list = MusicList()
+music_list.add_track("Artist one - track one")
+music_list.add_track("Artist two - track two")
+musiclist.list_of_tracks() # => "Artist one - track one, Artist two - track two"
 
 """
-Given a name and an empty task
-#remind still reminds the user to do the task, even though it looks odd
+Given a track that is alredy in the list 
+#add_track does not add it again to the list
 """
-reminder = Reminder("Kay")
-reminder.remind_me_to("")
-reminder.remind() # => ", Kay!"
+music_list = MusicList()
+music_list.add_track("Artist one - track one")
+music_list.add_track("Artist two - track two")
+music_list.add_track("Artist two - track two")
+musiclist.list_of_tracks() # => "Artist one - track one, Artist two - track two"
+
+"""
+Without any added tracks 
+#list_of_tracks throws an error 
+"""
+music_list = MusicList()
+musiclist.list_of_tracks() # => "You have no tracks added!"
 ```
 
 _Encode each example as a test. You can add to the above list as you go._
