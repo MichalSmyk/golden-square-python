@@ -5,6 +5,7 @@ Copy this into a `recipe.md` in your project and fill it out.
 ## 1. Describe the Problem
 
 _Put or write the user story here. Add any clarifying notes you might have._
+
 As a user
 So that I can keep track of my music listening
 I want to add tracks I've listened to and see a list of them.
@@ -16,31 +17,22 @@ _Include the initializer, public properties, and public methods with all paramet
 ```python
 # EXAMPLE
 
-class Reminder:
-    # User-facing properties:
-    #   name: string
-
-    def __init__(self, name):
+class MusicList:
+ 
+    def add_track(track):
         # Parameters:
-        #   name: string
-        # Side effects:
-        #   Sets the name property of the self object
-        pass # No code here yet
-
-    def remind_me_to(self, task):
-        # Parameters:
-        #   task: string representing a single task
+        #   track: string representing a single track
         # Returns:
         #   Nothing
         # Side-effects
-        #   Saves the task to the self object
+        #   Saves the track to the self object
         pass # No code here yet
 
-    def remind(self):
+    def list_of_tracks(self):
         # Returns:
-        #   A string reminding the user to do the task
+        #   an array with list of tracks
         # Side-effects:
-        #   Throws an exception if no task is set
+        #   Throws an exception if no tracks
         pass # No code here yet
 ```
 
