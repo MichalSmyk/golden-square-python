@@ -27,3 +27,18 @@ def test_count_words_returns_count_of_all_words_in_all_entry_contents():
     diary.add(entry_1)
     diary.add(entry_2)
     assert diary.count_words() == 6
+
+
+"""
+Given I add two diary entries with total length of 5
+And I call #reading_time with wpm of 2
+Then total reading time should be 3
+"""
+
+def test_reading_time_returns_time_to_read_all_the_entries():
+    diary = Diary()
+    entry_1 = DiaryEntry("My Title 1", "one two")
+    entry_2 = DiaryEntry("My Title 2", "three four five")
+    diary.add(entry_1)
+    diary.add(entry_2)
+    assert diary.reading_time(2) == 3
