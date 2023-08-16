@@ -9,11 +9,8 @@ class Diary:
         return self._entries
 
     def count_words(self):
-        # Returns:
-        #   An integer representing the number of words in all diary entries
-        # HINT:
-        #   This method should make use of the `count_words` method on DiaryEntry.
-        pass
+        word_counts = [entry.count_words() for entry in self._entries]
+        return sum(word_counts)
 
     def reading_time(self, wpm):
         # Parameters:

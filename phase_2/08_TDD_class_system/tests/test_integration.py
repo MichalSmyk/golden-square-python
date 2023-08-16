@@ -20,7 +20,7 @@ And I call #count_words
 I get the sum of all words in the contents of diary entries 
 """
 
-def xtest_count_words_returns_count_of_all_words_in_all_entry_contents():
+def test_count_words_returns_count_of_all_words_in_all_entry_contents():
     diary = Diary()
     entry_1 = DiaryEntry("My Title 1", "one two three")
     entry_2 = DiaryEntry("My Title 2", "four five six")
