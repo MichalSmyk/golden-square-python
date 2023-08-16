@@ -4,9 +4,8 @@ class DiaryEntry:
     #   contents: a string
 
     def __init__(self, title, contents): # title, contents are strings
-        # Side-effects:
-        #   Sets the title and contents properties
-        pass
+        self.title = title
+        self.contents = contents
 
     def count_words(self):
         # Returns:
