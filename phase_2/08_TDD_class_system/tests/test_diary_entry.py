@@ -9,3 +9,12 @@ def test_constructs_and_gets_title_and_contents():
     diary_entry = DiaryEntry("My title", "My Contents")
     assert diary_entry.title == "My title"
     assert diary_entry.contents == "My Contents"
+
+"""
+When I initialise with five-word contents
+Then #count_words should return 5
+"""
+
+def test_count_words_returns_word_count_of_contents():
+    diary_entry = DiaryEntry("My title", "one two three four five")
+    assert diary_entry.count_words() == 5
