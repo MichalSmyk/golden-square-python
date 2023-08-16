@@ -21,6 +21,8 @@ class Diary:
         # Returns:
         #   An integer representing an estimate of the reading time in minutes
         #   if the user were to read all entries in the diary.
+        if self._entries == []:
+            raise Exception("No entries added yet")
         word_count = self.count_words()
         return math.ceil(word_count / wpm)
 
