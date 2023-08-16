@@ -11,4 +11,9 @@ def test_adds_and_lists_diary_entries():
     entry_2 = DiaryEntry("My Title 2", "My Contents 2")
     diary.add(entry_1)
     diary.add(entry_2)
-    assert diary.all == [entry_1, entry_2]
+    assert diary.all() == [entry_1, entry_2]
+
+
+"""
+
+"""
