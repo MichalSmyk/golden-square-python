@@ -1,3 +1,5 @@
+import math
+
 class Diary:
     def __init__(self):
         self._entries = []
@@ -19,7 +21,8 @@ class Diary:
         # Returns:
         #   An integer representing an estimate of the reading time in minutes
         #   if the user were to read all entries in the diary.
-        pass
+        word_count = self.count_words()
+        return math.ceil(word_count / wpm)
 
     def find_best_entry_for_reading_time(self, wpm, minutes):
         # Parameters:
