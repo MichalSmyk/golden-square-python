@@ -58,3 +58,5 @@ def test_find_best_entry_for_reading_time_returns_entry_that_fits_in_time():
     diary.add(entry_1)
     diary.add(entry_2)
     assert diary.find_best_entry_for_reading_time(2,3) 
+
+#https://youtu.be/CGOETBVIaPQ?t=3382
