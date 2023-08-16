@@ -36,4 +36,9 @@ class Diary:
         #   An instance of DiaryEntry representing the entry that is closest to,
         #   but not over, the length that the user could read in the minutes
         #   they have available given their reading speed.
-        
+        words_the_user_could_read = wpm * minutes
+        readable_entries = []
+        for entry in self._entries:
+            if entry.count_words() <= words_the_user_could_read:
+                readable_entries.append(entry)
+        return readable_entries[0]
