@@ -65,8 +65,20 @@ And I call #find_best_entry_for_reading_time
 With a wpm and minutes that means I can read that entry 
 THen #find_best_entry_for_reading_time returns that entry 
 """
-def test_find_best_entry_for_reading_time_returns_entry_that_fits_in_timel():
+def test_find_best_entry_for_reading_time_returns_single_entry_that_fits_in_time():
     diary = Diary()
     entry_1 = DiaryEntry("My Title 1", "one two three")
     diary.add(entry_1)
     assert diary.find_best_entry_for_reading_time(2,3) == entry_1
+
+"""
+Gien I add a diary entry 
+And I call #find_best_entry_for_reading_time
+With a wpm and minutes that means I cannot read that entry 
+THen #find_best_entry_for_reading_time returns None 
+"""
+def test_find_best_entry_for_reading_time_returns_none_if_single_doesnt_fit():
+    diary = Diary()
+    entry_1 = DiaryEntry("My Title 1", "one two three four five six seven")
+    diary.add(entry_1)
+    assert diary.find_best_entry_for_reading_time(2,3) == None
