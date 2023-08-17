@@ -8,6 +8,8 @@ I can see them back in the incomplete list
 
 def test_adds_and_lists_todos():
     todo_list = TodoList()
-    todo = Todo("walk the dog")
-    todo_list.add(todo)
-    assert todo_list.incomplete() == [todo]
+    todo_1 = Todo("walk the dog")
+    todo_2 = Todo("walk the cat")
+    todo_list.add(todo_1)
+    todo_list.add(todo_2)
+    assert todo_list.incomplete() == [todo_1, todo_2]
