@@ -27,3 +27,13 @@ then #reading_time with a wpm of 2 should return 3
 def test_reading_time():
     diary_entry = DiaryEntry("My title", "one two three four five")    
     assert diary_entry.reading_time(2) == 3
+
+"""
+When I initialise with a five work contents
+Then, at first #readin_chunk should return the first chunk
+readable in the time 
+"""
+
+def test_readable_chunk_first_chunk():
+    diary_entry = DiaryEntry("My title", "one two three four five")
+    assert diary_entry.reading_chunk(2, 1) == ("one two")
