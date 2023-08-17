@@ -37,3 +37,15 @@ readable in the time
 def test_readable_chunk_first_chunk():
     diary_entry = DiaryEntry("My title", "one two three four five")
     assert diary_entry.reading_chunk(2, 1) == ("one two")
+
+
+"""
+When I initialize with a five-word contents
+Then, on the second call, #reading+chunk should retiurn th esecond chunk 
+readable in the time
+"""
+
+def test_readable_chunk_second_chunk():
+    diary_entry = DiaryEntry("My title", "one two three four five")
+    assert diary_entry.reading_chunk(2, 1) == ("one two")
+    assert diary_entry.reading_chunk(2, 1) == "three four"
