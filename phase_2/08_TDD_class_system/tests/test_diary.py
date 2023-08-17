@@ -36,4 +36,8 @@ def test_initially_find_best_entry_for_reading_time_raises_an_error():
     diary = Diary()
     with pytest.raises(Exception) as err:
         diary.find_best_entry_for_reading_time(2,2)
-    assert str(err.value) == "No entries added yet"    
+    assert str(err.value) == "No entries added yet"   
+
+
+"""
+""" 
