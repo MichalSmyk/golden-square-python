@@ -1,6 +1,6 @@
 class TodoList:
     def __init__(self):
-        pass
+        self._todo = []
 
     def add(self, todo):
         # Parameters:
@@ -9,12 +9,11 @@ class TodoList:
         #   Nothing
         # Side-effects:
         #   Adds the todo to the list of todos
-        pass
-      
+        return self._todo.append(todo)
+        
+
     def incomplete(self):
-        # Returns:
-        #   A list of Todo instances representing the todos that are not complete
-        pass
+        return self._todo
 
     def complete(self):
         # Returns:
