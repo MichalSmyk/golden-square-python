@@ -47,5 +47,28 @@ readable in the time
 
 def test_readable_chunk_second_chunk():
     diary_entry = DiaryEntry("My title", "one two three four five")
-    assert diary_entry.reading_chunk(2, 1) == ("one two")
+    diary_entry.reading_chunk(2, 1)
     assert diary_entry.reading_chunk(2, 1) == "three four"
+
+
+"""
+WHen I initialise with a five word contents
+then the third call should return final partial chunk 
+"""
+def test_readable_chunk_third_chunk():
+    diary_entry = DiaryEntry("My title", "one two three four five")
+    diary_entry.reading_chunk(2, 1)
+    diary_entry.reading_chunk(2, 1)
+    assert diary_entry.reading_chunk(2, 1) == "five"
+
+"""
+When I initializse with five word contents
+Then on the fourth call, the method should start again from the beggining 
+"""
+
+def test_readable_chunk_forth_chunk():
+    diary_entry = DiaryEntry("My title", "one two three four five")
+    diary_entry.reading_chunk(2, 1)
+    diary_entry.reading_chunk(2, 1)
+    diary_entry.reading_chunk(2, 1)
+    assert diary_entry.reading_chunk(2, 1) == "one two"
