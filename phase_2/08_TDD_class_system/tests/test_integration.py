@@ -57,6 +57,16 @@ def test_find_best_entry_for_reading_time_returns_entry_that_fits_in_time():
     entry_2 = DiaryEntry("My Title 2", "one two three four five six seven")
     diary.add(entry_1)
     diary.add(entry_2)
-    assert diary.find_best_entry_for_reading_time(2,3) 
+    assert diary.find_best_entry_for_reading_time(2,3) == entry_1
 
-#https://youtu.be/CGOETBVIaPQ?t=3382
+"""
+Gien I add a diary entry 
+And I call #find_best_entry_for_reading_time
+With a wpm and minutes that means I can read that entry 
+THen #find_best_entry_for_reading_time returns that entry 
+"""
+def test_find_best_entry_for_reading_time_returns_entry_that_fits_in_timel():
+    diary = Diary()
+    entry_1 = DiaryEntry("My Title 1", "one two three")
+    diary.add(entry_1)
+    assert diary.find_best_entry_for_reading_time(2,3) == entry_1
