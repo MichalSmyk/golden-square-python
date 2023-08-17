@@ -1,3 +1,4 @@
+from math import ceil
 class DiaryEntry:
     # Public Properties:
     #   title: a string
@@ -11,13 +12,7 @@ class DiaryEntry:
         return len(self.contents.split())
 
     def reading_time(self, wpm):
-        # Parameters:
-        #   wpm: an integer representing the number of words the user can read
-        #        per minute
-        # Returns:
-        #   An integer representing an estimate of the reading time in minutes
-        #   for the contents at the given wpm.
-        pass
+        return ceil(self.count_words() / wpm)
 
     def reading_chunk(self, wpm, minutes):
         # Parameters:
