@@ -18,7 +18,7 @@ class TodoList:
     def complete(self):
         # Returns:
         #   A list of Todo instances representing the todos that are complete
-        pass
+        return [todo for todo in self._todo if todo.complete]
 
     def give_up(self):
         # Returns:
