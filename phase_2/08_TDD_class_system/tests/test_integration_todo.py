@@ -63,3 +63,16 @@ def test_adds_two_todos_but_marks_one_as_complete_and_second_shows_as_incomplete
     todo_1.mark_complete()
     assert todo_list.incomplete() == [todo_2]
     
+"""
+When giving up 
+marks all todos as complete
+"""
+
+def test_giving_up_makrs_all_todo_as_complete():
+    todo_list = TodoList()
+    todo_1 = Todo("walk the dog")
+    todo_2 = Todo("walk the cat")
+    todo_list.add(todo_1)
+    todo_list.add(todo_2)
+    todo_list.give_up()
+    assert todo_list.incomplete() == []

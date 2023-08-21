@@ -25,4 +25,5 @@ class TodoList:
         #   Nothing
         # Side-effects:
         #   Marks all todos as complete
-        pass
+        for todo in self._todo:
+            todo.mark_complete()
