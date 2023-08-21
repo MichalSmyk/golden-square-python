@@ -22,3 +22,14 @@ def test_adds_and_lists_todos():
     todo_list.add(todo_1)
     todo_list.add(todo_2)
     assert todo_list.incomplete() == [todo_1, todo_2]
+
+"""
+Marks a todo as complete
+"""
+
+def test_marks_todo_as_complete():
+    todo_list = TodoList()
+    todo_1 = Todo("walk the dog")
+    todo_list.add(todo_1)
+    todo_1.mark_complete()
+    assert todo_list.complete() == [todo_1]
