@@ -13,7 +13,7 @@ class TodoList:
         
 
     def incomplete(self):
-        return self._todo
+        return [todo for todo in self._todo if not todo.complete]
 
     def complete(self):
         # Returns:
