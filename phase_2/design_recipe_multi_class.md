@@ -102,18 +102,42 @@ combinations that reflect the ways in which the system will be used._
 
 ```python
 # EXAMPLE
+"""
+When I add multiple  tasks
+They come back in the incomplete list
+"""
+tracker = TaskTracker()
+task_1 = Task("Walk the dog")
+taks_2 = Task("Walk the cat")
+tracker.add(task_1)
+tracker.add(task_2)
+tracker.list_incomplete() # => [task_1, task_2]
 
 """
-Given a library
-When we add two tracks
-We see those tracks reflected in the tracks list
+When I add multiple tasks
+And makr one as complete
+It does not show up in the incomplete list anymore
 """
-library = MusicLibrary()
-track_1 = Track("Carte Blanche", "Veracocha")
-track_2 = Track("Synaesthesia", "The Thrillseekers")
-library.add(track_1)
-library.add(track_2)
-library.tracks # => [track_1, track_2]
+tracker = TaskTracker()
+task_1 = Task("Walk the dog")
+taks_2 = Task("Walk the cat")
+tracker.add(task_1)
+tracker.add(task_2)
+task_1.mark_complete()
+tracker.list_incomplete() # => [task_2]
+
+"""
+When I add multiple tasks
+And makr one as complete
+It shows up in the complete list
+"""
+tracker = TaskTracker()
+task_1 = Task("Walk the dog")
+taks_2 = Task("Walk the cat")
+tracker.add(task_1)
+tracker.add(task_2)
+task_1.mark_complete()
+tracker.list_complete() # => [task_1]
 ```
 
 ## 4. Create Examples as Unit Tests
