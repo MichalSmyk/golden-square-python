@@ -1,8 +1,15 @@
-# {{PROBLEM}} Multi-Class Planned Design Recipe
+# Task Tracker Multi-Class Planned Design Recipe
 
 ## 1. Describe the Problem
 
 _Put or write the user story here. Add any clarifying notes you might have._
+> As a user
+> So that I can keep track of my tasks
+> I want a program that I can add todo tasks and see a list of them 
+
+> As a user
+> So that I can focus on tasks to complete
+> I want to mark tasks as complete and have them dissapear from the list
 
 ## 2. Design the Class System
 
