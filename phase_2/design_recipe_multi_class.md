@@ -147,13 +147,43 @@ a more granular level of detail._
 
 ```python
 # EXAMPLE
+# TaskTracker uniut tests
+"""
+Initially, the incomplete list is empty 
+"""
+tracker = TaskTracker()
+tracker.list_incomplete() # => []
 
 """
-Given a track with a title and an artist
-We see the title reflected in the title property
+Initially, the complete list is empty 
 """
-track = Track("Carte Blanche", "Veracocha")
-track.title # => "Carte Blanche"
+tracker = TaskTracker()
+tracker.list_complete() # => []
+
+#Task unit tests
+
+"""
+WHen we construct with a title 
+We get that title reflected in the title property 
+"""
+task = Task("Walk the dog")
+task.title #=> "Walk the dog"
+
+"""
+When we construct 
+the task is initially incomplete
+"""
+
+task = Task("Walk the dog")
+task.complete #=> False
+
+"""
+When we mark a task complete 
+It is complete
+"""
+task = Task("Walk the dog")
+task.mark_complete()
+task.complete #=> True
 ```
 
 _Encode each example as a test. You can add to the above list as you go._
