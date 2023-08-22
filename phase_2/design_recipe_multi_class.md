@@ -18,69 +18,80 @@ focus on the details you see as important, not everything. The diagram below
 uses asciiflow.com but you could also use excalidraw.com, draw.io, or miro.com_
 
 ```
-┌────────────────────────────┐
-│ MusicPlayer                │
-│                            │
-│ - tracks                   │
-│ - add(track)               │
-│ - search_by_title(keyword) │
-│   => [tracks...]           │
-└───────────┬────────────────┘
-            │
-            │ owns a list of
-            ▼
-┌─────────────────────────┐
-│ Track(title, artist)    │
-│                         │
-│ - title                 │
-│ - artist                │
-│ - format()              │
-│   => "TITLE by ARTIST"  │
-└─────────────────────────┘
+# Nouns
+task
+list of tasks
+program
+
+# Verbs 
+add
+see a list
+marking something complete
+disappear
+
+
+   ┌──────────────────────────┐
+   │ TaskList                 │
+   │                          │
+   │ - add(task)              │
+   │ - list_incomplete()      │
+   │ - list_complete()        │
+   │                          │
+   │                          │
+   └────────────┬─────────────┘
+                │
+                │
+                │
+                │
+    ┌───────────▼─────────────┐
+    │ Task                    │
+    │ - title [property]      │
+    │ - initialize(title)     │
+    │ - mark_complete()       │
+    │ - is_complete [property]│
+    │                         │
+    │                         │
+    └─────────────────────────┘
+
+
 ```
 
 _Also design the interface of each class in more detail._
 
 ```python
-class MusicLibrary:
-    # User-facing properties:
-    #   tracks: list of instances of Track
-
-    def __init__(self):
-        pass # No code here yet
-
-    def add(self, track):
+class TaskList():
+    def add(self, task):
         # Parameters:
-        #   track: an instance of Track
+        #   task: an instance of the Task class
         # Side-effects:
-        #   Adds the track to the tracks property of the self object
-        pass # No code here yet
+        #   Adds the task to an internal list of tasks
+        pass
 
-    def search_by_title(self, keyword):
-        # Parameters:
-        #   keyword: string
+    def list_incomplete(self):
         # Returns:
-        #   A list of the Track objects that have titles that include the keyword
-        pass # No code here yet
+        #   A list of instances of Task that are incomplete
+        pass
 
-
-class Track:
-    # User-facing properties:
-    #   title: string
-    #   artist: string
-
-    def __init__(self, title, artist):
-        # Parameters:
-        #   title: string
-        #   artist: string
-        # Side-effects:
-        #   Sets the title and artist properties
-        pass # No code here yet
-
-    def format(self):
+    def list_complete(self):
         # Returns:
-        #   A string of the form "TITLE by ARTIST"
-        pass # No code here yet
+        #   A list of instances of Task that are complete
+        pass
+
+
+class Task():
+    #public properties:
+    #   title: a string representing a job to do
+    #   complete: a boolean, true is task is complete, false otherwise
+    def __init__(self, title):
+        # Parameters:
+        #   title: a string representing a job to do
+        # Side-effects: sets the title property
+        #   sets the task incomplete at first
+        pass
+
+    def mark_complete(self):
+        # Side-effects: marks the task as complete
+        pass
 
 ```
 
