@@ -32,6 +32,6 @@ Given a title and an artist
 And a search keyword for a partial artist 
 Matches is true
 """
-def test_matches_on_partial_title():
+def test_matches_on_partial_artist():
     track = Track("Cat Title", "Dog Artist")
     assert track.matches("Dog") == True
