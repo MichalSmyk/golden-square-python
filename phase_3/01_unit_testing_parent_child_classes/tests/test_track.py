@@ -16,4 +16,4 @@ Matches is true
 """
 def test_matches_on_partial_title():
     track = Track("Cat Title", "Dog Artist")
-    assert track.matches("Cate") == True
+    assert track.matches("Cat") == True
