@@ -35,3 +35,14 @@ Matches is true
 def test_matches_on_partial_artist():
     track = Track("Cat Title", "Dog Artist")
     assert track.matches("Dog") == True
+
+
+"""
+Given a title and an artist
+And a search keyword that does not match either
+Matches is false
+"""
+
+def test_does_not_match_on_non_matching_keyword():
+    track = Track("Cat Title", "Dog Artist")
+    assert track.matches("Lala") == False
