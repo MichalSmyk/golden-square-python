@@ -15,3 +15,10 @@ def test_searches_by_keyword():
     fake_not_matching.matches.return_value = False
     library.add(fake_not_matching)
     assert library.search("hello") == [fake_matching]
+
+"""
+Initially tracks is empty
+"""
+def test_tracks_is_empty():
+    library = MusicLibrary()
+    assert library.tracks == []
