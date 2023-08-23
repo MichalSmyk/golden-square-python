@@ -1,3 +1,6 @@
+from lib.music_library import MusicLibrary
+from lib.track import Track
+
 """
 When I add multiple tracks 
 They are reflected in the tracks list
