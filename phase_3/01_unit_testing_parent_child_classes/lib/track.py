@@ -4,5 +4,5 @@ class Track:
         self.artist = artist
 
     def matches(self, keyword):
-        if keyword in self.title:
+        if keyword in self.title or keyword == self.artist:
             return True
