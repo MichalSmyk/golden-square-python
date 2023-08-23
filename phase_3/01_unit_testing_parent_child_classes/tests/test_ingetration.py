@@ -21,7 +21,7 @@ And I search for a track title
 Then I get the matching track back
 """
 
-def xtest_searches_for_track_by_full_title():
+def test_searches_for_track_by_full_title():
     library = MusicLibrary()
     track_1 = Track("Dog", "Cat")
     track_2 = Track("Cow", "Goat")
