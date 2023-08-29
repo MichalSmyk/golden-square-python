@@ -2,8 +2,13 @@ from unittest.mock import Mock
 
 def test_creates_a_sophisticated_mock():
     # Uncomment and set up your mocks here
-    # task_list = 
-    # task = 
+    task_list = Mock()
+    task = Mock()
+
+    task_list.add.return_value = [task]
+    task_list.count.return_value = 1
+    task_list.clear.return_value = "success"
+    task_list.list.return_value = [task]
 
     # Don't edit below
     task_list.add(task)
